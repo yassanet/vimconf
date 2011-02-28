@@ -70,6 +70,10 @@ inoremap '' ''<LEFT>
 inoremap "" ""<LEFT>
 inoremap () ()<LEFT>
 inoremap <> <><LEFT>
+nmap <Space>b :ls<CR>:buffer 
+nmap <Space>f :edit .<CR>
+nmap <Space>v :vsplit<CR><C-w><C-w>:ls<CR>:buffer
+nmap <Space>V :Vexplore!<CR><CR>
 
 
 " backup
