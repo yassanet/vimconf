@@ -1,0 +1,9 @@
+this is yassan's vimrc
+
+.vim/
+.vimrc
+
+cd ~/vimconf/
+git submodule init
+git submodule update
+

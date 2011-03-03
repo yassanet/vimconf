@@ -3,7 +3,18 @@ this is yassan's vimrc
 .vim/
 .vimrc
 
+[use]
 cd ~/vimconf/
 git submodule init
 git submodule update
 
+[edit]
+[new plugin]
+$ git submodule add xxx ./.vim/bundle/xxx
+$ git commit
+$ git remote commit origin git@github.com:yassanet/vimconf.git
+
+[delete plugin]
+$ vi .gitmodules
+$ rm plugin
+$ git commit
