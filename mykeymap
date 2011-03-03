@@ -1,0 +1,19 @@
+[file]
+ + f = open file.
+ + v = open file from buffer. and vertical.
+ + V = open file from vertical exproler.
+ + b = open buffer.
+
+[gtags]
+C-g = Gtags grep. 
+C-l = [in]src files -> [out]functions list
+C-j = [in]function -> [out]function define 
+C-k = [in]function -> [out]function ref
+
+C-n = next
+C-p = pre
+C-o = back
+C-i = back
+
+$ gtags -v
+
