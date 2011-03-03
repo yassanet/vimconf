@@ -12,7 +12,7 @@ git submodule update
 [new plugin]
 $ git submodule add xxx ./.vim/bundle/xxx
 $ git commit
-$ git remote commit origin git@github.com:yassanet/vimconf.git
+$ git remote push origin git@github.com:yassanet/vimconf.git
 
 [delete plugin]
 $ vi .gitmodules
