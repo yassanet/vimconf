@@ -3,12 +3,14 @@
  + v = open file from buffer. and vertical.
  + V = open file from vertical exproler.
  + b = open buffer.
+C-w C-f = open file on the cursor
 
+[search]
 [gtags]
 C-g = Gtags grep. 
 C-l = [in]src files -> [out]functions list
 C-j = [in]function -> [out]function define 
-C-k = [in]function -> [out]function ref
+C-k = [in]function -> [out]function refd
 
 C-n = next
 C-p = pre
@@ -16,4 +18,19 @@ C-o = back
 C-i = back
 
 $ gtags -v
+
+[grep]
+Grep
+GrepBuffer
+
+[mark]
+ma = buffer mark
+mA = global mark
+:'a = jump 
+
+[compl]
+snippet	= imap <C-c>
+
+:NeoComplCachePrintSnippets = snippet list
+
 
