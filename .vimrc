@@ -5,7 +5,13 @@
 	autocmd! cch
 	autocmd WinLeave * set nocursorline
 	autocmd WinEnter,BufRead * set cursorline
-augroup END
+	augroup END
+
+" [Backspace]の設定
+" start : 既存の文字を削除
+" eol : 行頭での削除
+" indent : オートインデントの削除
+set backspace=start,eol,indent
                    
 :hi clear CursorLine
 :hi CursorLine gui=underline
@@ -19,9 +25,24 @@ highlight CursorLine ctermbg=black guibg=black
 :let g:loaded_CodeReviewer = 0
 
 "-------------------------------
-"pathogen plugin
+"plugin management for neobundle
 "-------------------------------
-call pathogen#runtime_append_all_bundles()
+set nocompatible
+filetype off
+
+if has('vim_starting')
+  set runtimepath+=~/.vim/neobundle.vim.git
+
+  call neobundle#rc(expand('~/.vim/bundle'))
+endif
+
+NeoBundle 'git://github.com/Shougo/neocomplcache.git'
+NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
+NeoBundle 'git://github.com/thinca/vim-ref.git'
+
+filetype plugin on
+filetype indent on
+
 
 set nocompatible
 "
@@ -95,8 +116,8 @@ map <silent> <leader>be :BufExplorer<cr>
 "-------------------------------
 "current-func-info
 "-------------------------------
-"let &statusline = '[%f]%m%r%h%w%{"[".(&fenc!="" ? &fenc : &enc)."]"}%=%l/%L,%c%V%8P'
-let &statusline = '[%f]%m%r%h%w%(%{"[".(&fenc!="" ? &fenc : &enc)."]"}%)%{cfi#get_func_name() == "" ? "[no function]" : "[" . cfi#get_func_name() . "()]"}%=%l/%L,%c%V%8P'
+let &statusline = '[%f]%m%r%h%w%{"[".(&fenc!="" ? &fenc : &enc)."]"}%=%l/%L,%c%V%8P'
+"let &statusline = '[%f]%m%r%h%w%(%{"[".(&fenc!="" ? &fenc : &enc)."]"}%)%{cfi#get_func_name() == "" ? "[no function]" : "[" . cfi#get_func_name() . "()]"}%=%l/%L,%c%V%8P'
 "set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 
 " neocomplcache sample paste
